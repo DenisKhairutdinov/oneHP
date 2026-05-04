@@ -1,0 +1,57 @@
+.player {
+  position: absolute;
+  z-index: 20;
+  inset-block-end: rem(76);
+  inset-inline-start: rem(140);
+
+  display: flex;
+  justify-content: end;
+
+  inline-size: rem(40);
+
+  &--jump {
+    animation: jump 600ms forwards;
+  }
+
+  @keyframes jump {
+    0% {
+      inset-block-end: rem(76);
+      translate: 0 0;
+      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    45%,
+    65% {
+      inset-block-end: rem(92);
+      translate: 0 rem(-120);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    100% {
+      inset-block-end: rem(76);
+      translate: 0 0;
+    }
+  }
+}
+
+.player__sprite {
+  inset-block-end: 0;
+  translate: rem(8) 0;
+  min-inline-size: rem(72);
+
+  &--is-dead {
+    rotate: (-20deg);
+    animation: game-over 1000ms ease forwards 0ms;
+
+    @keyframes game-over {
+      20% {
+        translate: 0 rem(-40);
+      }
+
+      100% {
+        translate: 0 rem(340);
+        rotate: -140deg;
+      }
+    }
+  }
+}

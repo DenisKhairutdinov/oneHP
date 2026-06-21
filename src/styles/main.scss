@@ -1,0 +1,87 @@
+@import 'modern-css-reset/dist/reset.css';
+@import '/src/styles/base/fonts';
+@import '/src/styles/blocks/world';
+@import '/src/styles/blocks/player';
+@import '/src/styles/blocks/enemies';
+@import '/src/styles/blocks/footer';
+@import '/src/styles/blocks/header';
+
+body {
+  @include centering;
+
+  overflow: hidden;
+  flex-direction: column;
+  block-size: 100vh;
+  background-color: $primary;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+img,
+svg {
+  display: block;
+}
+
+.frame {
+  position: relative;
+
+  overflow: hidden;
+
+  inline-size: rem(960);
+  block-size: rem(540);
+  margin-block-end: rem(8);
+  border-radius: rem(24);
+
+  background-color: $bg;
+  box-shadow:
+    inset 0 0 4px #0000001a,
+    inset 0 0 6px #0000001a;
+
+  @media (pointer: coarse) {
+    display: none;
+  }
+}
+
+.modal {
+  @include centering;
+
+  position: absolute;
+  z-index: 1000;
+  inset: 0;
+
+  display: none;
+
+  padding-inline: rem(20);
+
+  font-family: 'Tiny5', sans-serif;
+  font-size: rem(20);
+  font-weight: 400;
+  font-style: normal;
+  color: $bg;
+  text-align: center;
+
+  background-color: $primary;
+
+  @media (pointer: coarse) {
+    display: flex;
+  }
+}
+
+.game-over * {
+  transition: none !important;
+  animation-play-state: paused !important;
+}
+
+.game-over .player__sprite,
+.game-over .player__sprite * {
+  animation-play-state: running !important;
+}
+
+.game-over .header,
+.game-over .header * {
+  animation-play-state: running !important;
+}

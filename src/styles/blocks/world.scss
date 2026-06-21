@@ -1,0 +1,18 @@
+.world {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  block-size: 100%;
+}
+
+.sky,
+.wall,
+.ground {
+  will-change: transform;
+  display: flex;
+  flex-direction: row;
+  backface-visibility: hidden;
+}
+
+.sky {
+  align-self: end;
+}

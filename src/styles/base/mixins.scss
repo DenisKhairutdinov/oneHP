@@ -1,0 +1,12 @@
+@use '/src/styles/base/vars' as *;
+@use '/src/styles/base/functions' as *;
+
+@mixin centering {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin box {
+  border: 1px solid #f00;
+}

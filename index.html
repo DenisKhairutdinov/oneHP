@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>oneHP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="frame">
+      <header class="header">
+        <div class="header__left">
+          <span class="header__score">score</span>
+          <span class="header__score-value" data-score-value>0</span>
+        </div>
+        <p class="header__message" data-restart-message>Press SPACE to restart</p>
+        <div class="header__right">
+          <span class="header__maxscore">max. score</span>
+          <span class="header__maxscore-value" data-maxscore-value>0</span>
+        </div>
+      </header>
+      <div class="world">
+        <div class="sky">
+          <img
+            src="/src/assets/sprites/world/sky1.svg"
+            alt=""
+            class="sky__sprite"
+            data-sky-sprite
+          />
+          <img
+            src="/src/assets/sprites/world/sky2.svg"
+            alt=""
+            class="sky__sprite"
+            data-sky-sprite
+          />
+          <img
+            src="/src/assets/sprites/world/sky3.svg"
+            alt=""
+            class="sky__sprite"
+            data-sky-sprite
+          />
+          <img
+            src="/src/assets/sprites/world/sky4.svg"
+            alt=""
+            class="sky__sprite"
+            data-sky-sprite
+          />
+        </div>
+        <div class="wall">
+          <img
+            src="/src/assets/sprites/world/wall1.svg"
+            alt=""
+            class="wall__sprite"
+            data-wall-sprite
+          />
+          <img
+            src="/src/assets/sprites/world/wall2.svg"
+            alt=""
+            class="wall__sprite"
+            data-wall-sprite
+          />
+          <img
+            src="/src/assets/sprites/world/wall3.svg"
+            alt=""
+            class="wall__sprite"
+            data-wall-sprite
+          />
+          <img
+            src="/src/assets/sprites/world/wall4.svg"
+            alt=""
+            class="wall__sprite"
+            data-wall-sprite
+          />
+        </div>
+        <div class="ground">
+          <img
+            src="/src/assets/sprites/world/ground.svg"
+            alt=""
+            class="ground__sprite"
+            data-ground-sprite
+          />
+          <img
+            src="/src/assets/sprites/world/ground.svg"
+            alt=""
+            class="ground__sprite"
+            data-ground-sprite
+          />
+          <img
+            src="/src/assets/sprites/world/ground.svg"
+            alt=""
+            class="ground__sprite"
+            data-ground-sprite
+          />
+          <img
+            src="/src/assets/sprites/world/ground.svg"
+            alt=""
+            class="ground__sprite"
+            data-ground-sprite
+          />
+        </div>
+      </div>
+      <div class="enemies">
+        <div class="enemies__deleter" data-enemies-deleter></div>
+        <div class="enemies__spawner" data-enemies-spawner></div>
+      </div>
+      <div class="player hurtbox" data-player data-player-hurtbox>
+        <img src="" alt="" class="player__sprite" data-player-sprite />
+      </div>
+    </main>
+    <footer class="footer">
+      <span class="footer__text">oneHP</span>
+      <div class="footer__wrapper">
+        <span class="footer__arrow footer__arrow--rotate">↑</span>
+        <span class="footer__arrow">↑</span>
+        <span class="footer__arrow">↓</span>
+      </div>
+      <span class="footer__text">@jackrassul</span>
+    </footer>
+    <div class="modal">
+      Oops! This game is too big for your screen. Please open it on your computer.
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

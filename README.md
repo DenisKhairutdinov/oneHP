@@ -3,7 +3,7 @@
 
 <img width="944" height="528" alt="screenshot" src="https://github.com/user-attachments/assets/8115e3d8-abb8-4407-8266-2fe2504cbcdb" />
 
-**[Играть онлайн](https://one-hp.vercel.app/)**<br>
+**[Играть онлайн](https://onehp.vercel.app/)**<br>
 **[Игровой арт (Figma)](https://www.figma.com/design/TolXaz7FUxjJHn4Hp2kbFN/lastHP)**
 
 ОneHP - это минималистичный раннер, в котором у игрока есть

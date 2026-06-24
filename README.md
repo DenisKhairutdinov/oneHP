@@ -1,57 +1,47 @@
 # oneHP
-**oneHP** is a minimalist runner game where the player has only one hit point and must dodge enemies by jumping or ducking. The project demonstrates clean vanilla JavaScript, DOM‑based rendering, modular architecture, and an event‑driven PubSub system.
+Браузерная 2D игра
 
 <img width="944" height="528" alt="screenshot" src="https://github.com/user-attachments/assets/8115e3d8-abb8-4407-8266-2fe2504cbcdb" />
 
-**[Play online](https://one-hp.vercel.app/)**<br>
-**[Game art (Figma)](https://www.figma.com/design/TolXaz7FUxjJHn4Hp2kbFN/lastHP)**
+**[Играть онлайн](https://one-hp.vercel.app/)**<br>
+**[Игровой арт (Figma)](https://www.figma.com/design/TolXaz7FUxjJHn4Hp2kbFN/lastHP)**
 
-### Features
-- Pure vanilla JavaScript - no Canvas, no frameworks;
-- Fully DOM‑driven animations;
-- Modular architecture (player, enemies, world, collisions, score);
-- PubSub event flow for decoupled logic;
-- requestAnimationFrame game loop;
-- Collision detection via DOM hitboxes;
-- High score saved in localStorage;
-- Custom‑made sprites and visuals.
+ОneHP - это минималистичный раннер, в котором у игрока есть
+только одно очко здоровья, и он должен уклоняться от врагов, прыгая или пригибаясь. Проект
+демонстрирует чистый JavaScript без фреймворков, рендеринг через DOM, модульную архитектуру и
+событийно-ориентированную систему PubSub.
 
-### Controls
-- **arrowUp** - jump;
-- **arrowDown** - duck;
-- **arrowRight** - move forwards;
-- **space** - restasrt after death.
+## Особенности
+- Чистый JavaScript без фреймворков и Canvas;
+- Полностью DOM-ориентированные анимации;
+- Модульная архитектура (игрок, враги, игровой мир, столкновения, счёт);
+- Поток событий PubSub для слабосвязанной логики;
+- Игровой цикл на основе requestAnimationFrame;
+- Обнаружение столкновений с помощью DOM-хитбоксов;
+- Сохранение рекорда в localStorage;
+- Спрайты и визуальные элементы, созданные вручную.
 
-### Architecture overview
-The game is structured around small, isolated modules, each responsible for a specific part of the logic.
-- **Player module** - state, animations, jump/duck logic;
-- **Enemies module** - enemy generation, movement, pooling;
-- **World module** - world speed, background;
-- **Collisions module** - hitbox checks, collision events;
-- **Score module** - score tracking, localStorage persistence.
+## Обзор архитектуры
+Игра построена на небольших изолированных модулях, каждый из которых отвечает за определённую часть логики:
+- Модуль игрока - состояние, анимации, логика прыжка и приседания;
+- Модуль врагов - создание врагов, их перемещение и пул объектов;
+- Модуль игрового мира - скорость мира и фон;
+- Модуль столкновений - проверка хитбоксов и события столкновений;
+- Модуль счёта - подсчёт очков и сохранение данных в localStorage.
 
-All modules are imported into index.js, which runs the main loop.
+Все модули импортируются в главный index.js, который запускает основной игровой цикл.
 
-### PubSub event flow
-The game uses a lightweight publish-subscribe pattern to keep modules decoupled:
-1. Collisions detects a hit.
-2. Publishes "collision: detected".
-3. Player listens → updates state → publishes "player:dead".
-4. World, enemies, score listen and stop/update their behavior.
-   
-This makes the system easy to extend and reason about.
+## Поток событий PubSub
+В игре используется лёгкий паттерн публикации-подписки (PubSub), который позволяет сохранять слабую связанность между модулями:
+- Модуль столкновений обнаруживает столкновение;
+- Публикует событие "collision:detected";
+- Модуль игрока получает событие, обновляет своё состояние и публикует "player:dead";
+- Модули игрового мира, врагов и счёта получают это событие и останавливают или изменяют своё поведение.
 
-### Graphics
-All sprites and visual assets were designed manually in Figma. (**[link](https://www.figma.com/design/TolXaz7FUxjJHn4Hp2kbFN/lastHP)**)
+Такой подход упрощает расширение системы и делает её логику более понятной.
 
-### Tech stack
-- JavaScript (ES Modules);
-- DOM API;
-- CSS animations / transitions;
-- requestAnimationFrame;
-- localStorage.
+## Графика
+Все спрайты и визуальные ресурсы были разработаны вручную в Figma.
 
-### Possible improvements
-- Mobile controls & responsive layout;
-- Difficulty scaling (world speed increase);
-- Sound effects.
+## Технологии
+JavaScript (ES Modules) • DOM API • CSS-анимации и переходы • requestAnimationFrame • localStorage
